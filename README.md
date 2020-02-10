@@ -1,4 +1,4 @@
-自作Blenderのアドオンやスクリプトを公開しています
+自作のBlenderアドオンやスクリプトを公開しています
 
 # AsymmetrizeShapekey
 ## HowToUse
