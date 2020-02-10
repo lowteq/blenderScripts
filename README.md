@@ -12,4 +12,4 @@ you can find property > shapekey > specials
 
 Click to create a new asymmetric shape keys
 ## LICENSE
-MIT LICENSE
+MIT License
