@@ -4,7 +4,7 @@
 ## 使いかた
 https://github.com/Taremin/ApplyModifier
 こちらのアドオンなどで作った左右対称なシェイプキーに対して使います。
-左右非対称化したいシェイプキーを選択した状態で▼をクリックしてAsymmetrizeShapekeyをクリックし作成することができます。
+左右非対称化したいシェイプキーを選択した状態でシェイプキーのスペシャルメニュー▼をクリックしてAsymmetrizeShapekeyをクリックし作成することができます。
 
 ![p](https://github.com/lowteq/blenderScripts/blob/master/readmeimages/20200211045408_383x354.png)
 
