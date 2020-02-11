@@ -8,6 +8,7 @@ https://github.com/Taremin/ApplyModifier
 
 ![p](https://github.com/lowteq/blenderScripts/blob/master/readmeimages/20200211045408_383x354.png)
 
+![s](https://github.com/lowteq/blenderScripts/blob/master/readmeimages/20200211113539_1468x888.png)
 ## HowToUse
 https://github.com/Taremin/ApplyModifier
 
