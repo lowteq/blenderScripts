@@ -23,3 +23,20 @@ Click to create a new asymmetric shape keys
 ## LICENSE
 MIT License
 
+# FaceEXShapekey
+[FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)
+## 使いかた
+キャラの顔の中に埋め込んだメッシュを出し入れするシェイプキーを簡単につくることができます。ex.ハート目、頬染め、漫符
+編集モード時3DビューのツールシェルフのFaceEXShapekeyパネルから使います
+
+duplicate : 選択したメッシュを複製します。ハート目や頬染めシェイプキーを作るときはONにします
+
+innerOffset : シェイプキーの値が0のときのメッシュの相対位置です。ハート目などを顔に埋め込む場合は(0cm,5cm,0cm)くらいがよいです。
+innerScale : シェイプキーの値が0のときのメッシュのScaleです。0.5くらいがよいです。
+surfOffset : シェイプキーの値が1のときのメッシュの相対位置です。ハート目や頬染めシェイプキーは元のメッシュより手前で必要があるので(0,-1mm,0)くらいがよいです。
+surfScale : シェイプキーの値が1のときのメッシュのScaleです。頬染めシェイプキーの場合は単純にOffsetで手前に出しただけではうまくいかないのでこの値を1.01などにします。
+
+create : スクリプト実行ボタン
+
+
+
