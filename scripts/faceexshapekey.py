@@ -37,7 +37,7 @@ bl_info = {
     "location": "3D View > Mesh",
     "description": "Create extra shapekeys for faces",
     "warning": "",
-    "support": "TESTING",
+    "support": "COMMUNITY",
     "wiki_url": "",
     "tracker_url": "https://github.com/lowteq",
     "category": "Mesh"
@@ -167,7 +167,7 @@ def init_props():
     scene.faceexshapekey_prop_duplicateFlag = BoolProperty(
         name="duplicate", default=True)
     
-# プロパティを削除
+
 def clear_props():
     scene = bpy.types.Scene
     del scene.faceexshapekey_prop_innerOffset
