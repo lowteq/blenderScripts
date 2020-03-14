@@ -90,7 +90,7 @@ class FaceEXShapekey(bpy.types.Operator):
 
         obj.data.shape_keys.key_blocks[exshapekey.name].value = 1
 
-        bpy.ops.transform.resize(override,value=(1/innerScale, 1/innerScale, 1/innerScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=True, proportional='DISABLED')
+        bpy.ops.transform.resize(override,value=(1/innerScale, 1/innerScale, 1/innerScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
         bpy.ops.transform.translate(value=transformOffset, constraint_orientation='GLOBAL', mirror=True, proportional='DISABLED')
         bpy.ops.transform.resize(override,value=(surfScale, surfScale, surfScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=True, proportional='DISABLED')
 
