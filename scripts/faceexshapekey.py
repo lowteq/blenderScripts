@@ -32,7 +32,7 @@ def get_override(area_type, region_type):
 bl_info = {
     "name": "FaceEXShapekey",
     "author": "lowteq",
-    "version": (1, 0),
+    "version": (1, 1),
     "blender": (2, 78, 0),
     "location": "3D View > Mesh",
     "description": "Create extra shapekeys for faces",
@@ -65,13 +65,12 @@ class FaceEXShapekey(bpy.types.Operator):
        
         transformOffset = (-innerOffset[0] + surfOffset[0], -innerOffset[1] + surfOffset[1], -innerOffset[2] + surfOffset[2])
 
-
-        if bpy.context.mode != "EDIT_MESH":
-            print("must run in EDITMODE")
-            exit()
             
-        obj = bpy.context.object
+        bpy.ops.object.mode_set(mode='OBJECT')
+        obj = bpy.context.active_object
         obj.active_shape_key_index = 0
+
+        bpy.ops.object.mode_set(mode='EDIT')
 
         if duplicateFlag:
             bpy.ops.mesh.duplicate()
@@ -84,10 +83,13 @@ class FaceEXShapekey(bpy.types.Operator):
         bpy.ops.transform.translate(value=innerOffset, constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
         bpy.ops.transform.resize(override,value=(innerScale, innerScale, innerScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
 
+        bpy.ops.object.mode_set(mode='OBJECT')
         exshapekey = obj.shape_key_add(name="Ex",from_mix=False)
         index = len(obj.data.shape_keys.key_blocks) - 1
         bpy.context.object.active_shape_key_index = index
 
+        bpy.ops.object.mode_set(mode='EDIT')
+        
         obj.data.shape_keys.key_blocks[exshapekey.name].value = 1
 
         bpy.ops.transform.resize(override,value=(1/innerScale, 1/innerScale, 1/innerScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
