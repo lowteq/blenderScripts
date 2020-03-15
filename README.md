@@ -1,7 +1,12 @@
 自作のBlenderアドオンやスクリプトを公開しています
+- [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts#asymmetrizeshapekey)
+- [FaceEXShapekey](https://github.com/lowteq/blenderScripts#faceexshapekey)
+
+
 
 # AsymmetrizeShapekey
 [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)
+[AsymmetrizeShapekey 2.8対応](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey28.py)
 ## 使いかた
 https://github.com/Taremin/ApplyModifier
 こちらのアドオンなどで作った左右対称なシェイプキーに対して使います。
@@ -22,6 +27,7 @@ you can find property > shapekey > specials
 Click to create a new asymmetric shape keys
 ## LICENSE
 MIT License
+
 
 # FaceEXShapekey
 [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)
