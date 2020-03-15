@@ -1,6 +1,6 @@
 自作のBlenderアドオンやスクリプトを公開しています
-## [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts#asymmetrizeshapekey)
-## [FaceEXShapekey](https://github.com/lowteq/blenderScripts#faceexshapekey)
+- [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts#asymmetrizeshapekey)
+- [FaceEXShapekey](https://github.com/lowteq/blenderScripts#faceexshapekey)
 
 
 
