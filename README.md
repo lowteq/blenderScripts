@@ -6,6 +6,7 @@
 
 # AsymmetrizeShapekey
 [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)
+
 [AsymmetrizeShapekey 2.8対応](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey28.py)
 ## 使いかた
 https://github.com/Taremin/ApplyModifier
@@ -31,6 +32,7 @@ MIT License
 
 # FaceEXShapekey
 [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)
+
 ## 使いかた
 キャラの顔の中に埋め込んだメッシュを出し入れするシェイプキーを簡単につくることができます。ex.ハート目、頬染め、漫符
 編集モード時3DビューのツールシェルフのFaceEXShapekeyパネルから使います
