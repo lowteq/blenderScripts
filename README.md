@@ -6,6 +6,7 @@
 このリポジトリのアドオンはモデリング・Blender・VRChat界隈の発展のために無償で公開しているものです。  
 寄付をしていただけると今後の開発の支援になります。
 
+---
 
 # AsymmetrizeShapekey
 [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)  
@@ -32,6 +33,7 @@ Click to create a new asymmetric shape keys
 ## LICENSE
 MIT License
 
+---
 
 # FaceEXShapekey 
 [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)  
