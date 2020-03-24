@@ -2,7 +2,8 @@
 - [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts#asymmetrizeshapekey)
 - [FaceEXShapekey](https://github.com/lowteq/blenderScripts#faceexshapekey)
 
-# [寄付(Donate)](https://paypal.me/qukumulowteq?locale.x=ja_JP)
+# 寄付(Donate)
+[paypal.me](https://paypal.me/qukumulowteq?locale.x=ja_JP)
 このリポジトリのアドオンはモデリング・Blender・VRChat界隈の発展のために無償で公開しているものです。  
 寄付をしていただけると今後の開発の支援になります。
 
