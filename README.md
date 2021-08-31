@@ -1,7 +1,7 @@
 自作のBlenderアドオンやスクリプトを公開しています
 - [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts#asymmetrizeshapekey)
 - [FaceEXShapekey](https://github.com/lowteq/blenderScripts#faceexshapekey)
-
+- [sortShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/sortshapekey.py)
 ---
 
 # 寄付(Donate)
@@ -56,4 +56,16 @@ surfScale : シェイプキーの値が1のときのメッシュのScaleです�
 create : スクリプト実行ボタン
 ## LICENSE
 MIT License
+
+---
+
+# SortShapekey
+
+## 使いかた
+[![howtouse]](https://user-images.githubusercontent.com/5676316/131511705-57495c7d-615d-45a9-978d-ddccd795fb2f.mp4)
+
+## LICENSE
+MIT License
+
+
 
