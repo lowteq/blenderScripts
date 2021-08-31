@@ -1,11 +1,10 @@
 import bpy
 import bmesh
-
-
+from bpy.props import BoolProperty
 bl_info = {
     "name" : "SortShapekeyPlugin",
     "author" : "lowteq",
-    "version" : (0,1),
+    "version" : (0,2),
     "blender" : (2,80, 0),
     "location" : "View3D > Object",
     "description" : "Sort shapekeys",
@@ -24,50 +23,52 @@ class OBJECT_OT_sort_shapekey(bpy.types.Operator):
     bl_options = {'REGISTER', 'UNDO'}
 
 
+    reverse : BoolProperty(
+        default=False,
+        options = {'HIDDEN'}
+    )
+    
+    
+
     def execute(self, context):
         
         bpy.ops.object.mode_set(mode='OBJECT')
         obj = bpy.context.active_object
         src = obj
-        #bpy.ops.object.shape_key_move(type='UP')
 
-        #bpy.context.object.active_shape_key_index = 0
-        
-        shapekeynamelist = []
-        
         if obj.data.shape_keys == None:
             bpy.ops.object.shape_key_add(from_mix=False)
 
-        for i in range(1, len(src.data.shape_keys.key_blocks)): # skip basis
-            src_key = src.data.shape_keys.key_blocks[i]
-            print(src_key.name)
-            shapekeynamelist.append(src_key.name)
+        shapekeynamelist = [src_key.name for src_key in src.data.shape_keys.key_blocks[1:]] # skip basis
         
-        
-        sortedlist = sorted(shapekeynamelist,key=str.lower)
-        for sortedindex,name in enumerate(sortedlist):
-            srcshapekeyindex = src.data.shape_keys.key_blocks.find(name)
-            bpy.context.object.active_shape_key_index = srcshapekeyindex
-            
-            sortedindex += 1
-            if sortedindex > srcshapekeyindex:
+        sortedlist = sorted(shapekeynamelist,key=str.lower,reverse=self.reverse)
+
+        for index,name in enumerate(sortedlist):
+            src_key_ix = src.data.shape_keys.key_blocks.find(name)
+            dst_key_ix = index + 1
+
+            #move shapekey at src_key_ix to dst_key_ix
+            bpy.context.object.active_shape_key_index = src_key_ix
+            if dst_key_ix > src_key_ix:
                 opstype = "DOWN"
             else:
                 opstype = "UP"
-            
-            prognum = abs(srcshapekeyindex - sortedindex)
-            for i in range(prognum):
-                bpy.ops.object.shape_key_move(type=opstype)
-            
 
-            
-            
+            for i in range(abs(src_key_ix - dst_key_ix)):
+                bpy.ops.object.shape_key_move(type=opstype)
+
+
         bpy.ops.object.mode_set(mode='OBJECT')
         return {'FINISHED'}
 
 
 def menu_func(self, context):
-    self.layout.operator(OBJECT_OT_sort_shapekey.bl_idname,text="Sort Shapekey")
+    self.layout.separator()
+    asc = self.layout.operator(OBJECT_OT_sort_shapekey.bl_idname,text="Sort Shapekey")
+    asc.reverse = False
+    desc = self.layout.operator(OBJECT_OT_sort_shapekey.bl_idname,text="Sort Shapekey reverse")
+    desc.reverse = True
+    
 
 classes = [
     OBJECT_OT_sort_shapekey,
