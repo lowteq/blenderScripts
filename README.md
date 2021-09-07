@@ -1,7 +1,10 @@
 自作のBlenderアドオンやスクリプトを公開しています
-- [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts#asymmetrizeshapekey)
-- [FaceEXShapekey](https://github.com/lowteq/blenderScripts#faceexshapekey)
-- [sortShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/sortshapekey.py)
+- [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)  
+左右対称に作られたシェイプキーから左右に分けたシェイプキーを作成します。
+- [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)  
+選択したメッシュをシェイプキーが100のときにその位置にくるようなメッシュとしてシェイプキーを作ります。
+- [sortShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/sortshapekey.py)  
+シェイプキーの順序をソートします。
 ---
 
 # 寄付(Donate)
@@ -13,7 +16,6 @@
 
 # AsymmetrizeShapekey
 [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)  
-[AsymmetrizeShapekey 2.8対応](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey28.py)
 
 ## 使いかた
 https://github.com/Taremin/ApplyModifier
@@ -40,7 +42,6 @@ MIT License
 
 # FaceEXShapekey 
 [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)  
-[FaceEXShapekey 2.8対応](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey28.py)
 
 ## 使いかた
 キャラの顔の中に埋め込んだメッシュを出し入れするシェイプキーを簡単につくることができます。ex.ハート目、頬染め、漫符
