@@ -1,4 +1,5 @@
-自作のBlenderアドオンやスクリプトを公開しています
+自作のBlenderアドオンやスクリプトを公開しています  
+主にアバター制作向け  
 - [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)  
 左右対称に作られたシェイプキーから左右に分けたシェイプキーを作成します。
 - [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)  
