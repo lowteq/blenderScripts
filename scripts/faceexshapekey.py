@@ -5,15 +5,17 @@ from bpy.props import BoolProperty
 
 
 def pivotpointchange(pivotpoint):
-    for area in bpy.context.screen.areas:
-        if area.type == 'VIEW_3D':
-            area.spaces[0].pivot_point = pivotpoint
+    bpy.context.scene.tool_settings.transform_pivot_point = pivotpoint
+#    for area in bpy.context.screen.areas:
+#        if area.type == 'VIEW_3D':
+#            area.spaces[0].pivot_point = pivotpoint
 
 
 def currentpivotpoint():
-    for area in bpy.context.screen.areas:
-        if area.type == 'VIEW_3D':
-            return area.spaces[0].pivot_point
+    return bpy.context.scene.tool_settings.transform_pivot_point
+#    for area in bpy.context.screen.areas:
+#        if area.type == 'VIEW_3D':
+#            return area.spaces[0].pivot_point
 
 
 def get_override(area_type, region_type):
@@ -33,7 +35,7 @@ bl_info = {
     "name": "FaceEXShapekey",
     "author": "lowteq",
     "version": (1, 1),
-    "blender": (2, 78, 0),
+    "blender": (2, 80, 0),
     "location": "3D View > Mesh",
     "description": "Create extra shapekeys for faces",
     "warning": "",
@@ -65,13 +67,12 @@ class FaceEXShapekey(bpy.types.Operator):
        
         transformOffset = (-innerOffset[0] + surfOffset[0], -innerOffset[1] + surfOffset[1], -innerOffset[2] + surfOffset[2])
 
-            
         bpy.ops.object.mode_set(mode='OBJECT')
         obj = bpy.context.active_object
         obj.active_shape_key_index = 0
-
+        
         bpy.ops.object.mode_set(mode='EDIT')
-
+        
         if duplicateFlag:
             bpy.ops.mesh.duplicate()
             
@@ -80,11 +81,15 @@ class FaceEXShapekey(bpy.types.Operator):
         pivotPointTemp = currentpivotpoint()
         pivotpointchange('INDIVIDUAL_ORIGINS')
 
-        bpy.ops.transform.translate(value=innerOffset, constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
-        bpy.ops.transform.resize(override,value=(innerScale, innerScale, innerScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
 
+
+        bpy.ops.transform.translate(value=innerOffset, orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False)
+        bpy.ops.transform.resize(override,value=(innerScale, innerScale, innerScale), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False)
+
+        
         bpy.ops.object.mode_set(mode='OBJECT')
         exshapekey = obj.shape_key_add(name="Ex",from_mix=False)
+        
         index = len(obj.data.shape_keys.key_blocks) - 1
         bpy.context.object.active_shape_key_index = index
 
@@ -92,25 +97,26 @@ class FaceEXShapekey(bpy.types.Operator):
         
         obj.data.shape_keys.key_blocks[exshapekey.name].value = 1
 
-        bpy.ops.transform.resize(override,value=(1/innerScale, 1/innerScale, 1/innerScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED')
-        bpy.ops.transform.translate(value=transformOffset, constraint_orientation='GLOBAL', mirror=True, proportional='DISABLED')
-        bpy.ops.transform.resize(override,value=(surfScale, surfScale, surfScale), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=True, proportional='DISABLED')
+        bpy.ops.transform.resize(override,value=(1/innerScale, 1/innerScale, 1/innerScale), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False)
+
+        bpy.ops.transform.translate(value=transformOffset, orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False)
+        bpy.ops.transform.resize(override,value=(surfScale, surfScale, surfScale), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False)
 
         obj.data.shape_keys.key_blocks[exshapekey.name].value = 0
 
         pivotpointchange(pivotPointTemp)
 
-        
         return {'FINISHED'}
+
 
 
 class VIEW3D_PT_CustomMenu(bpy.types.Panel):
 
     bl_label = "FaceEXShapekey"
     bl_space_type = 'VIEW_3D'
-    bl_region_type = 'TOOLS'
-    bl_category = "FaceEXShapekey"
+    bl_region_type = 'UI'
     bl_context = "mesh_edit"
+    bl_category = "FaceEXShapekey"
 
     @classmethod
     def poll(cls, context):
@@ -177,20 +183,25 @@ def clear_props():
     del scene.faceexshapekey_prop_surfOffset
     del scene.faceexshapekey_prop_surfScale
     del scene.faceexshapekey_prop_duplicateFlag
-    
+
+classes = [
+    FaceEXShapekey,
+    VIEW3D_PT_CustomMenu,
+]  
 
 def register():
-    bpy.utils.register_module(__name__)
+    for c in classes:
+        bpy.utils.register_class(c)
     init_props()
-    bpy.types.VIEW3D_MT_object.append(menu_fn_1)
+    #bpy.types.VIEW3D_MT_object.append(menu_fn_1)
 
 
 
 def unregister():
-    bpy.types.VIEW3D_MT_object.remove(menu_fn_1)
+    #bpy.types.VIEW3D_MT_object.remove(menu_fn_1)
     clear_props()
-    bpy.utils.unregister_module(__name__)
-
+    for c in classes:
+        bpy.utils.unregister_class(c)
 
 if __name__ == "__main__":
     register()

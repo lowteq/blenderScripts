@@ -1,4 +1,3 @@
-# Blender内部のデータ構造にアクセスするために必要
 import bpy
 import bmesh
 
@@ -7,7 +6,7 @@ bl_info = {
     "name" : "AsymmetrizeShapekeyPlugin",
     "author" : "lowteq",
     "version" : (0,1),
-    "blender" : (2,78, 0),
+    "blender" : (2,80, 0),
     "location" : "View3D > Object",
     "description" : "Duplicate symmetric shapekey into asymmetric shapekeys",
     "warning" : "",
@@ -17,7 +16,7 @@ bl_info = {
 }
 
 
-class OBJECT_asymmetrize_shapekey(bpy.types.Operator):
+class OBJECT_OT_asymmetrize_shapekey(bpy.types.Operator):
 
     bl_idname = "object.asymmetrize_shapekey"
     bl_label = "Asymmetrize_Shapekey"
@@ -68,17 +67,22 @@ class OBJECT_asymmetrize_shapekey(bpy.types.Operator):
 
 
 def menu_func(self, context):
-    self.layout.operator(OBJECT_asymmetrize_shapekey.bl_idname,text="Asymmetrize Shapekey")
+    self.layout.operator(OBJECT_OT_asymmetrize_shapekey.bl_idname,text="Asymmetrize Shapekey")
 
+classes = [
+    OBJECT_OT_asymmetrize_shapekey,
+]
 
 def register():
-    bpy.utils.register_module(__name__)
-    bpy.types.MESH_MT_shape_key_specials.append(menu_func)
+    for c in classes:
+        bpy.utils.register_class(c)
+    bpy.types.MESH_MT_shape_key_context_menu.append(menu_func)
 
 
 def unregister():
-    bpy.utils.unregister_module(__name__)
-    bpy.types.MESH_MT_shape_key_specials.remove(menu_func)
+    bpy.types.MESH_MT_shape_key_context_menu.remove(menu_func)
+    for c in classes:
+        bpy.utils.unregister_class(c)
 
 
 if __name__ == "__main__":
