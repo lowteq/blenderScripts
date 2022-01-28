@@ -4,7 +4,7 @@
 左右対称に作られたシェイプキーから左右に分けたシェイプキーを作成します。
 - [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)  
 選択したメッシュをシェイプキーが100のときにその位置にくるようなメッシュとしてシェイプキーを作ります。
-- [sortShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/sortshapekey.py)  
+- [SortShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/sortshapekey.py)  
 シェイプキーの順序をソートします。
 ---
 
@@ -17,7 +17,8 @@
 
 # AsymmetrizeShapekey
 [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)  
-
+## LICENSE
+MIT License
 ## 使いかた
 https://github.com/Taremin/ApplyModifier
 こちらのアドオンなどで作った左右対称なシェイプキーに対して使います。
@@ -36,14 +37,14 @@ you can find property > shapekey > specials
 ![p](https://github.com/lowteq/blenderScripts/blob/master/readmeimages/20200211045408_383x354.png)
 
 Click to create a new asymmetric shape keys
-## LICENSE
-MIT License
+
 
 ---
 
 # FaceEXShapekey 
 [FaceEXShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/faceexshapekey.py)  
-
+## LICENSE
+MIT License
 ## 使いかた
 キャラの顔の中に埋め込んだメッシュを出し入れするシェイプキーを簡単につくることができます。ex.ハート目、頬染め、漫符
 編集モード時3DビューのツールシェルフのFaceEXShapekeyパネルから使います
@@ -56,18 +57,17 @@ surfOffset : シェイプキーの値が1のときのメッシュの相対位置
 surfScale : シェイプキーの値が1のときのメッシュのScaleです。頬染めシェイプキーの場合は単純にOffsetで手前に出しただけではうまくいかないのでこの値を1.01などにします。  
 
 create : スクリプト実行ボタン
-## LICENSE
-MIT License
+
 
 ---
 
 # SortShapekey
-
+## LICENSE
+MIT License
 ## 使いかた
 [![howtouse]](https://user-images.githubusercontent.com/5676316/131511705-57495c7d-615d-45a9-978d-ddccd795fb2f.mp4)
 
-## LICENSE
-MIT License
+
 
 
 
