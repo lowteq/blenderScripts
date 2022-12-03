@@ -60,10 +60,13 @@ MIT License
 ## 使いかた
 [![howtouse]](https://user-images.githubusercontent.com/5676316/131511705-57495c7d-615d-45a9-978d-ddccd795fb2f.mp4)
 
+
+---
+
 # AdjustEdgesLength
 [AdjustEdgesLength](https://github.com/lowteq/blenderScripts/blob/master/scripts/adjustedges.py)
 ## LICENSE
 MIT License
-##　使い方
+## 使い方
 編集モードで辺を選択した状態でWキーもしくは右クリックからコンテキストメニュー>Adjust Edges Lengthをクリック
 
