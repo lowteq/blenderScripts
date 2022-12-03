@@ -8,13 +8,6 @@
 シェイプキーの順序をソートします。
 ---
 
-# 寄付(Donate)
-[paypal.me](https://paypal.me/qukumulowteq?locale.x=ja_JP)  
-このリポジトリのアドオンはモデリング・Blender・VRChat界隈の発展のために無償で公開しているものです。  
-寄付をしていただけると今後の開発の支援になります。
-
----
-
 # AsymmetrizeShapekey
 [AsymmetrizeShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/AsymmetrizeShapekey.py)  
 ## LICENSE
@@ -67,7 +60,10 @@ MIT License
 ## 使いかた
 [![howtouse]](https://user-images.githubusercontent.com/5676316/131511705-57495c7d-615d-45a9-978d-ddccd795fb2f.mp4)
 
-
-
-
+# AdjustEdgesLength
+[AdjustEdgesLength](https://github.com/lowteq/blenderScripts/blob/master/scripts/adjustedges.py)
+## LICENSE
+MIT License
+#　使い方
+編集モードで辺を選択した状態でWキーもしくは右クリックからコンテキストメニュー>Adjust Edges Lengthをクリック
 
