@@ -53,7 +53,7 @@ def adjust_edge_length(edges, target_length):
 
 class AdjustEdgeLength(bpy.types.Operator):
     bl_idname = "mesh.adjust_edge_length"
-    bl_label = "Adjust edge length"
+    bl_label = "Adjust edges length"
     bl_options = {'REGISTER', 'UNDO'}
 
     @classmethod
