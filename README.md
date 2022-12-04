@@ -6,7 +6,7 @@
 選択したメッシュをシェイプキーが100のときにその位置にくるようなメッシュとしてシェイプキーを作ります。
 - [SortShapekey](https://github.com/lowteq/blenderScripts/blob/master/scripts/sortshapekey.py)  
 シェイプキーの順序をソートします。
-- [AdjustEdgesLength](https://github.com/lowteq/blenderScripts/blob/master/scripts/adjustedges.py)
+- [AdjustEdgesLength](https://github.com/lowteq/blenderScripts/blob/master/scripts/adjustedges.py)  
 選択した辺の長さを揃えます。
 ---
 
